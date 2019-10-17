@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         paddingBottom: 5,
         paddingLeft: 2,
         paddingRight: 2,
-        marginBottom: 20,
+        marginBottom: 10,
         borderRadius: 15,
         textAlign: 'center',
         flexDirection: 'row',
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     },
 
     TextAreaBox: {
-        backgroundColor: 'white',
+        backgroundColor: '#f5f3f2',
         width: '85%',borderRadius: 15
     }
 
