@@ -1,18 +1,24 @@
 import React from 'react';
-import { TextInput, StyleSheet, Text, View } from 'react-native';
+import { Button, TextInput, StyleSheet, Text, View } from 'react-native';
 
-const TextArea = () => (
-
-    <View style = {styles.TextAreaBox}>
-        <TextInput placeholder = " Type your message."/>
+const TextArea = ({onPressHandler, onSubmitHandler}) => (
+    <View style = {styles.TextArea}>
+        <TextInput placeholder = " Type your message." onChangeText = {onPressHandler} style = {styles.TextAreaBox} />
+        <Button title = 'send ' style = {{marginRight: 2}} onPress = {onSubmitHandler} />
     </View>
+)   
+    
 
-);
+
+        
+            
+
+
+
 
 const styles = StyleSheet.create({
 
-    TextAreaBox: {
-        backgroundColor: 'white',
+    TextArea: {
         paddingTop: 5,
         paddingBottom: 5,
         paddingLeft: 2,
@@ -20,7 +26,14 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         borderRadius: 15,
         textAlign: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
         
+    },
+
+    TextAreaBox: {
+        backgroundColor: 'white',
+        width: '85%',borderRadius: 15
     }
 
 });
