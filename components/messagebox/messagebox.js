@@ -21,7 +21,7 @@ class MessageBox extends React.Component {
                     else {
                         return (
                             <View key = {index}  style = {styles.MessageRight}>
-                                <Text style = {{fontSize: 15}}>{ele[0]}</Text>
+                                <Text style = {{fontSize: 20, color: 'white'}}>{ele[0]}</Text>
                             </View>
                         );
                     }
