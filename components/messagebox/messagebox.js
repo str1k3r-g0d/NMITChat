@@ -10,11 +10,22 @@ class MessageBox extends React.Component {
             <View >
             <ScrollView>
 
-                {this.props.messages.map((ele,index) => (
-                    <View key = {index}  style = {styles.Message}>
-                        <Text style = {{fontSize: 20}}>{ele}</Text>
-                    </View>
-                ))}
+                {this.props.messages.map((ele,index) => {
+                    if(ele[1] === 'sent') {
+                        return(    
+                            <View key = {index}  style = {styles.MessageLeft}>
+                                <Text style = {{fontSize: 20, color: 'white'}}>{ele[0]}</Text>
+                            </View>
+                        );
+                    }
+                    else {
+                        return (
+                            <View key = {index}  style = {styles.MessageRight}>
+                                <Text style = {{fontSize: 15}}>{ele[0]}</Text>
+                            </View>
+                        );
+                    }
+                })}
             </ScrollView>
             </View>
         )
@@ -25,15 +36,36 @@ class MessageBox extends React.Component {
 export default MessageBox;
 
 styles = StyleSheet.create({
-    Message: {
+    MessageLeft: {
+        
+        marginLeft: 20,
+        marginRight: 20,
+        marginBottom: 5,
+        borderWidth: 0.5,
+        borderColor: '#317ae0',
+        paddingLeft: 10,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
+        backgroundColor: '#317ae0',
+        paddingTop: 10,
+        paddingBottom: 6,
+
+        
+    },
+
+    MessageRight: {
+        flexDirection: 'row-reverse',
+        marginRight: 20,
         marginLeft: 20,
         marginBottom: 5,
-        width: 300,
         borderWidth: 0.5,
-        borderColor: 'blue',
-        paddingLeft: 10,
-        borderTopLeftRadius: 20
-        
+        borderColor: '#31e054',
+        paddingRight: 10,
+        backgroundColor: '#31e054',
+        borderTopRightRadius: 20,
+        borderTopLeftRadius: 20,
+        borderBottomLeftRadius: 20,      
         
     }
 })

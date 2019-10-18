@@ -4,7 +4,6 @@ import io from 'socket.io-client';
 import TextArea from './components/TextArea/TextArea';
 import MessageBox from './components/messagebox/messagebox';
 
-var message = [];
 
 
 class App extends React.Component {
@@ -31,8 +30,8 @@ class App extends React.Component {
     const socket = io.connect('https://frozen-peak-23350.herokuapp.com');
 
     socket.on('NMIT', data => { 
-      console.log(data.message);
-      message.push(data.message);
+      const message = [...this.state.messages];
+      message.push([data.message,'recieved'])
       this.setState({
         messages: message,
         type: 'recieved'
@@ -49,7 +48,8 @@ class App extends React.Component {
 
 
   onSubmitHandler = () => {
-    message.push(this.state.text);
+    const message = [...this.state.messages];
+    message.push([this.state.text,'sent'])
     this.setState({
       messages: message,
       type: 'sent'
