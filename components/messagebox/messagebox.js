@@ -26,11 +26,13 @@ export default MessageBox;
 
 styles = StyleSheet.create({
     Message: {
+        marginLeft: 20,
         marginBottom: 5,
         width: 300,
         borderWidth: 0.5,
         borderColor: 'blue',
-        paddingLeft: 10
+        paddingLeft: 10,
+        borderTopLeftRadius: 20
         
         
     }

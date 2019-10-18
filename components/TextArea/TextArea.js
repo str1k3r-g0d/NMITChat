@@ -3,7 +3,7 @@ import { Button, TextInput, StyleSheet, Text, View } from 'react-native';
 
 const TextArea = ({onPressHandler, onSubmitHandler}) => (
     <View style = {styles.TextArea}>
-        <TextInput placeholder = " Type your message." onChangeText = {onPressHandler} style = {styles.TextAreaBox} />
+        <TextInput clearButtonMode = "always" placeholder = " Type your message." onChangeText = {onPressHandler} style = {styles.TextAreaBox} />
         <Button title = 'send ' style = {{marginRight: 2}} onPress = {onSubmitHandler} />
     </View>
 )   
