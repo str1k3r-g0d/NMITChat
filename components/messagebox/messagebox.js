@@ -65,7 +65,9 @@ styles = StyleSheet.create({
         backgroundColor: '#31e054',
         borderTopRightRadius: 20,
         borderTopLeftRadius: 20,
-        borderBottomLeftRadius: 20,      
+        borderBottomLeftRadius: 20,
+        paddingTop: 10,
+        paddingBottom: 6,      
         
     }
 })

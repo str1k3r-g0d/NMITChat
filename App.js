@@ -29,6 +29,11 @@ class App extends React.Component {
   componentDidMount() {
     const socket = io.connect('https://frozen-peak-23350.herokuapp.com');
 
+    send = () => {
+    
+      socket.emit('NMIT', { message: this.state.text })
+    }
+
     socket.on('NMIT', data => { 
       const message = [...this.state.messages];
       message.push([data.message,'recieved'])
@@ -41,26 +46,29 @@ class App extends React.Component {
   }
   
 
-  send = () => {
-    
-    socket.emit('NMIT', { message: this.state.text })
-  }
+  
 
 
   onSubmitHandler = () => {
+    send();
     const message = [...this.state.messages];
     message.push([this.state.text,'sent'])
     this.setState({
       messages: message,
       type: 'sent'
     })
+    
 
     this.setState({
       text: '',
-    })
+    });
+
+    
+
   }
 
   
+
 
   render() {
     return (
