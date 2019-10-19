@@ -70,7 +70,7 @@ class App extends React.Component {
           
         </View>
         <View style={styles.TextArea}>
-          <TextArea onPressHandler = {this.onPress} onSubmitHandler = {this.onSubmitHandler} />
+          <TextArea value = {this.state.text} onPressHandler = {this.onPress} onSubmitHandler = {this.onSubmitHandler} />
         </View>
       </KeyboardAvoidingView>
     );
